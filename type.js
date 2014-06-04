@@ -29,3 +29,16 @@ function __getClass(object){
   return Object.prototype.toString.call(object)
     .match(/^\[object\s(.*)\]$/)[1];
 };
+
+isWindow = function (obj) {
+    return obj != null && obj == obj.window;
+};
+
+isDocument = function (obj) {
+    return obj != null && obj.nodeType == obj.DOCUMENT_NODE;
+};
+
+isObject = function (obj) {
+        return utils.type(obj) == "object";
+    };
+    
