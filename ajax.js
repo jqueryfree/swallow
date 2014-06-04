@@ -18,9 +18,12 @@ function request(type, url, opts, callback) {
         } else {
             callback({
                 success: false,
-                message: '\u670D\u52A1\u5668\u8BF7\u6C42\u8D85\u65F6\uFF01'
+                message: 'server timeout.'
             });
         }
     };
     xhr.send(opts ? fd : null);
 }
+
+var get = request.bind(this, 'GET');
+var post = request.bind(this, 'POST');
